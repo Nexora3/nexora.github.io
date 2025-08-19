@@ -3,37 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Визитка Nexora</title>
+  <title>Nexora</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
+  <canvas id="bg"></canvas>
 
   <div class="card">
-    <!-- Баннер -->
-    <div class="banner">
-      <h2>Team GHS — братва GHS. Кодим, шарим, играем...</h2>
-    </div>
-
-    <!-- Аватар -->
-    <img
-      src="https://i.imgur.com/4AiXzf8.jpeg"
-      alt="Аватар Nexora"
-      class="avatar"
-    />
-
-    <!-- Имя и описание -->
+    <div class="banner"><h2>Team GHS — братва GHS. Кодим, шарим, играем...</h2></div>
+    <img src="https://i.imgur.com/4AiXzf8.jpeg" alt="Аватар Nexora" class="avatar" />
     <h1 id="name">Nexora</h1>
     <p id="description">Просто пацан. Один из тех, кто делает движ.</p>
-
-    <!-- Кнопки -->
     <div class="buttons">
-      <a href="https://t.me/yourtelegram" class="button" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://discord.gg/yourdiscord" class="button" target="_blank" rel="noopener">Discord</a>
-      <a href="https://vk.com/yourvk" class="button" target="_blank" rel="noopener">VK</a>
+      <a href="https://t.me/yourtelegram" class="button" target="_blank">Telegram</a>
+      <a href="https://discord.gg/yourdiscord" class="button" target="_blank">Discord</a>
+      <a href="https://vk.com/yourvk" class="button" target="_blank">VK</a>
     </div>
-
-    <!-- Переключение языка -->
     <div class="lang-switcher">
       <button onclick="setLang('ru')" id="btn-ru" class="active">RU</button>
       <button onclick="setLang('en')" id="btn-en">EN</button>
@@ -51,7 +36,7 @@
       en: {
         name: "Nexora",
         description: "Just a dude. One of those who makes the move.",
-        banner: "Team GHS — the GHS crew. We code, chill, and game..."
+        banner: "Team GHS — the GHS crew. We code, chill, game..."
       },
       ua: {
         name: "Nexora",
@@ -64,11 +49,60 @@
       document.getElementById("name").textContent = content[lang].name;
       document.getElementById("description").textContent = content[lang].description;
       document.querySelector(".banner h2").textContent = content[lang].banner;
-
       ["ru", "en", "ua"].forEach(l => {
         document.getElementById("btn-" + l).classList.toggle("active", l === lang);
       });
     }
+  </script>
+
+  <script>
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+    let W, H;
+    const drops = [];
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    class Drop {
+      constructor() {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.size = 5 + Math.random() * 12;
+        this.speed = 1 + Math.random() * 2;
+        this.angle = Math.random() * Math.PI * 2;
+      }
+      update() {
+        this.y += this.speed;
+        this.x += Math.sin(this.angle) * 0.5;
+        this.angle += 0.02;
+        if (this.y > H + this.size) {
+          this.y = -this.size;
+          this.x = Math.random() * W;
+        }
+      }
+      draw() {
+        ctx.fillStyle = "rgba(255, 50, 50, 0.7)";
+        ctx.beginPath();
+        ctx.ellipse(this.x, this.y, this.size / 2, this.size, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 40; i++) drops.push(new Drop());
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      drops.forEach(d => {
+        d.update();
+        d.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
