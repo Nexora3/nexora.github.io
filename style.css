@@ -1,95 +1,114 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body, html {
-  height: 100%;
-  overflow: hidden;
+body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0e0e0e;
-  color: #eee;
-}
-
-canvas#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.card {
-  position: relative;
-  width: 360px;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(20, 0, 0, 0.8);
-  padding: 30px 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #b30000;
-  text-align: center;
-}
-
-.banner {
-  background: #b30000;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-.banner h2 {
+  background-color: #111;
   color: #fff;
-  font-size: 18px;
-  font-weight: 600;
 }
 
-.avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid #ff3c3c;
-  margin: 15px auto;
+.banner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
   display: block;
 }
 
+.card {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: -100px auto 50px;
+  box-shadow: 0 0 15px rgba(255, 59, 48, 0.5);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #ff3b30;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
 h1 {
-  color: #ff5757;
-  margin-bottom: 10px;
+  color: #ff3b30;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  color: #ff6150;
 }
 
 p {
+  margin-bottom: 1rem;
   color: #ccc;
-  margin-bottom: 15px;
 }
 
 .buttons {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
-.button {
-  background: #ff3c3c;
-  color: #fff;
-  padding: 10px 18px;
-  margin: 0 6px;
-  border-radius: 6px;
+
+.buttons a {
+  padding: 0.6rem 1.4rem;
+  background: #ff3b30;
+  color: white;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
   transition: 0.3s;
-  display: inline-block;
 }
-.button:hover {
-  background: #b30000;
+
+.buttons a:hover {
+  background: #ff6150;
+}
+
+.lang-switcher {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .lang-switcher button {
-  border: 2px solid #ff3c3c;
-  background: none;
-  color: #ff3c3c;
-  padding: 8px 12px;
-  margin: 0 4px;
-  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  border: 2px solid #ff3b30;
+  background: transparent;
+  color: #ff3b30;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
 }
+
 .lang-switcher button.active,
 .lang-switcher button:hover {
-  background: #ff3c3c;
-  color: #fff;
+  background: #ff3b30;
+  color: white;
+}
+
+.toggle-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff3b30;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#extra-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+#extra-info:not(.hidden) {
+  max-height: 200px;
+}
+
+.hidden {
+  max-height: 0 !important;
 }
