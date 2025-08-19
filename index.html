@@ -1,57 +1,52 @@
-# About Me
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .language {
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-i18n="title">Nexora</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600&display=swap">
+  <link rel="icon" href="assets/images/icon.png" type="image/png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1E3A5F">
 </head>
 <body>
-    <div class="container">
-        <h1>GHS Team</h1>
-        <div class="language">
-            <h2>English</h2>
-            <p>GHS Team is a community for communication where you can find new friends and like-minded individuals. We bring together people interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just pleasant conversations.</p>
-        </div>
-        <div class="language">
-            <h2>Русский</h2>
-            <p>GHS Team - это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.</p>
-        </div>
-        <div class="language">
-            <h2>Svenska</h2>
-            <p>GHS Team är en gemenskap för kommunikation där du kan hitta nya vänner och likasinnade. Vi förenar människor som är intresserade av programmering och videospel och skapar en bekväm atmosfär för att dela erfarenheter, idéer och bara trevliga samtal.</p>
-        </div>
-        <div class="language">
-            <h2>Українська</h2>
-            <p>GHS Team - це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об'єднуємо людей, які цікавляться програмуванням та відеоіграми, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування.</p>
-        </div>
-        <h2>Nexora</h2>
-        <p>Just Nexora. One of those who drives GHS.</p>
+  <div class="language-switcher">
+    <span class="language-current">Russian</span>
+    <div class="language-menu">
+      <div class="language-option" data-lang="ru">Russian</div>
+      <div class="language-option" data-lang="en">English</div>
+      <div class="language-option" data-lang="es">Español</div>
     </div>
+  </div>
+  <div class="container">
+    <div class="profile-card">
+      <div class="avatar-container">
+        <img src="assets/images/furinaava.png" alt="Avatar" class="avatar">
+        <div class="avatar-border"></div>
+      </div>
+      <h1 data-i18n="title">Луна</h1>
+      <p data-i18n="description">Просто Nexora.<br> Однин из тех, кто делает движ в GHS</p>
+      <div class="ad-block">
+        <p data-i18n="ad_block">GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.</p>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="https://t.me/liunari_moe" target="_blank" class="btn" aria-label="Telegram">
+        <span class="material-icons">telegram</span>
+      </a>
+      <a href="https://discord.gg/S5PKUeaUJb" target="_blank" class="btn" aria-label="Discord">
+        <span class="material-icons">discord</span>
+      </a>
+      <a href="commands.html" class="btn" aria-label="Бот">
+        <span class="material-icons">smart_toy</span>
+      </a>
+    </div>
+  </div>
+  <div id="hearts-container"></div>
+  <script src="js/script.js"></script>
 </body>
 </html>
