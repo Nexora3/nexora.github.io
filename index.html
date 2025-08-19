@@ -33,7 +33,7 @@
       <a href="https://vk.com/yourvk" class="button" target="_blank" rel="noopener">VK</a>
     </div>
 
-    <!-- Переключатель языков -->
+    <!-- Переключение языка -->
     <div class="lang-switcher">
       <button onclick="setLang('ru')" id="btn-ru" class="active">RU</button>
       <button onclick="setLang('en')" id="btn-en">EN</button>
@@ -65,7 +65,6 @@
       document.getElementById("description").textContent = content[lang].description;
       document.querySelector(".banner h2").textContent = content[lang].banner;
 
-      // Кнопки активного языка
       ["ru", "en", "ua"].forEach(l => {
         document.getElementById("btn-" + l).classList.toggle("active", l === lang);
       });
