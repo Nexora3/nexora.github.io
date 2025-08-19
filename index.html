@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Визитка Nexora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="card">
+    <!-- Баннер -->
+    <div class="banner">
+      <h2>Team GHS — братва GHS. Кодим, шарим, играем...</h2>
+    </div>
+
+    <!-- Аватар -->
+    <img
+      src="https://i.imgur.com/4AiXzf8.jpeg"
+      alt="Аватар Nexora"
+      class="avatar"
+    />
+
+    <!-- Имя и описание -->
+    <h1 id="name">Nexora</h1>
+    <p id="description">Просто пацан. Один из тех, кто делает движ.</p>
+
+    <!-- Кнопки -->
+    <div class="buttons">
+      <a href="https://t.me/yourtelegram" class="button" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://discord.gg/yourdiscord" class="button" target="_blank" rel="noopener">Discord</a>
+      <a href="https://vk.com/yourvk" class="button" target="_blank" rel="noopener">VK</a>
+    </div>
+
+    <!-- Переключатель языков -->
+    <div class="lang-switcher">
+      <button onclick="setLang('ru')" id="btn-ru" class="active">RU</button>
+      <button onclick="setLang('en')" id="btn-en">EN</button>
+      <button onclick="setLang('ua')" id="btn-ua">UA</button>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      ru: {
+        name: "Nexora",
+        description: "Просто пацан. Один из тех, кто делает движ.",
+        banner: "Team GHS — братва GHS. Кодим, шарим, играем..."
+      },
+      en: {
+        name: "Nexora",
+        description: "Just a dude. One of those who makes the move.",
+        banner: "Team GHS — the GHS crew. We code, chill, and game..."
+      },
+      ua: {
+        name: "Nexora",
+        description: "Просто пацан. Один із тих, хто робить рух.",
+        banner: "Team GHS — братва GHS. Кодуємо, шаримо, граємо..."
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("name").textContent = content[lang].name;
+      document.getElementById("description").textContent = content[lang].description;
+      document.querySelector(".banner h2").textContent = content[lang].banner;
+
+      // Кнопки активного языка
+      ["ru", "en", "ua"].forEach(l => {
+        document.getElementById("btn-" + l).classList.toggle("active", l === lang);
+      });
+    }
+  </script>
+</body>
+</html>
