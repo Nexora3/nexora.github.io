@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const translations = {
   ru: {
-    title: "Луна",
-    description: "Просто Луна.<br> Одна из тех, кто создала GHS",
+    title: "Nexora",
+    description: "Просто Nexora.<br> Однин из тех, кто делает движ в GHS",
     ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
     telegram_label: "Telegram",
     discord_label: "Discord",
