@@ -1,108 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nexora</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexora — GHS Team</title>
+<style>
+  /* Базовые стили */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #2a2a2a);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Капли */
+  .droplets {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .droplet {
+    position: absolute;
+    bottom: 100%;
+    width: 10px;
+    height: 25px;
+    background: rgba(255, 59, 48, 0.4);
+    border-radius: 50% / 60%;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 0 4px #ff3b30);
+  }
+  @keyframes fall {
+    to {
+      transform: translateY(120vh);
+      opacity: 0;
+    }
+  }
+  /* Карточка */
+  .card {
+    background: #1c1c1cdd;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff3b30cc;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+  }
+  .card h1 {
+    font-size: 3rem;
+    margin-bottom: 0.25rem;
+    color: #ff3b30;
+    text-shadow: 0 0 10px #ff3b30bb;
+  }
+  .card h2 {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff6150;
+    text-shadow: 0 0 6px #ff6150bb;
+  }
+  .card p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff3b30;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    box-shadow: 0 0 15px #ff3b30bb;
+    transition: transform 0.3s ease;
+  }
+  .avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff3b30dd;
+  }
+  /* Кнопки */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .buttons a {
+    padding: 0.75rem 1.5rem;
+    background: #ff3b30;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 0 10px #ff3b30aa;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  .buttons a:hover {
+    background-color: #ff5a4a;
+    box-shadow: 0 0 20px #ff5a4a;
+  }
+  /* Переключатель языков */
+  .lang-switcher {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .lang-switcher button {
+    background: transparent;
+    border: 2px solid #ff3b30;
+    color: #ff3b30;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-switcher button.active,
+  .lang-switcher button:hover {
+    background: #ff3b30;
+    color: #fff;
+  }
+  /* Адаптив */
+  @media (max-width: 600px) {
+    .card {
+      padding: 1.5rem 2rem;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+    .card h1 {
+      font-size: 2.2rem;
+    }
+    .card h2 {
+      font-size: 1.2rem;
+    }
+    .buttons a {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <canvas id="bg"></canvas>
+  <div class="droplets"></div>
 
-  <div class="card">
-    <div class="banner"><h2>Team GHS — братва GHS. Кодим, шарим, играем...</h2></div>
-    <img src="https://i.imgur.com/4AiXzf8.jpeg" alt="Аватар Nexora" class="avatar" />
+  <main class="card" role="main" aria-label="Визитка Nexora">
+    <img
+      src="https://i.imgur.com/4AiXzf8.jpeg"
+      alt="Аватар Nexora"
+      class="avatar"
+      loading="lazy"
+      width="150"
+      height="150"
+    />
     <h1 id="name">Nexora</h1>
-    <p id="description">Просто пацан. Один из тех, кто делает движ.</p>
-    <div class="buttons">
-      <a href="https://t.me/yourtelegram" class="button" target="_blank">Telegram</a>
-      <a href="https://discord.gg/yourdiscord" class="button" target="_blank">Discord</a>
-      <a href="https://vk.com/yourvk" class="button" target="_blank">VK</a>
+    <p id="description">Просто Nexora. Один из тех, кто делает движ GHS.</p>
+
+    <h2 id="team-title">GHS Team</h2>
+    <p id="team-desc">Это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.</p>
+
+    <nav class="buttons" role="navigation" aria-label="Социальные сети">
+      <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
+      <a href="https://discord.gg/yourdiscord" target="_blank" rel="noopener noreferrer" aria-label="Discord">Discord</a>
+      <a href="https://ghs-team.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="GHS сайт">GHS</a>
+    </nav>
+
+    <div class="lang-switcher" role="group" aria-label="Переключатель языков">
+      <button id="btn-ru" class="active" type="button" aria-pressed="true">RU</button>
+      <button id="btn-en" type="button" aria-pressed="false">EN</button>
+      <button id="btn-ua" type="button" aria-pressed="false">UA</button>
     </div>
-    <div class="lang-switcher">
-      <button onclick="setLang('ru')" id="btn-ru" class="active">RU</button>
-      <button onclick="setLang('en')" id="btn-en">EN</button>
-      <button onclick="setLang('ua')" id="btn-ua">UA</button>
-    </div>
-  </div>
+  </main>
 
   <script>
     const content = {
       ru: {
         name: "Nexora",
-        description: "Просто пацан. Один из тех, кто делает движ.",
-        banner: "Team GHS — братва GHS. Кодим, шарим, играем..."
+        description: "Просто Nexora. Один из тех, кто делает движ GHS.",
+        teamTitle: "GHS Team",
+        teamDesc: "Это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения."
       },
       en: {
         name: "Nexora",
-        description: "Just a dude. One of those who makes the move.",
-        banner: "Team GHS — the GHS crew. We code, chill, game..."
+        description: "Just Nexora. One of those who make the GHS movement.",
+        teamTitle: "GHS Team",
+        teamDesc: "This is a community for communication where you can find new friends and like-minded people. We unite people interested in programming and video games, creating a comfortable atmosphere for exchanging experience, ideas, and just pleasant communication."
       },
       ua: {
         name: "Nexora",
-        description: "Просто пацан. Один із тих, хто робить рух.",
-        banner: "Team GHS — братва GHS. Кодуємо, шаримо, граємо..."
+        description: "Просто Nexora. Один із тих, хто робить рух GHS.",
+        teamTitle: "GHS Team",
+        teamDesc: "Це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об’єднуємо людей, які цікавляться програмуванням та відеоіграми, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування."
       }
     };
+
+    const btnRu = document.getElementById("btn-ru");
+    const btnEn = document.getElementById("btn-en");
+    const btnUa = document.getElementById("btn-ua");
 
     function setLang(lang) {
       document.getElementById("name").textContent = content[lang].name;
       document.getElementById("description").textContent = content[lang].description;
-      document.querySelector(".banner h2").textContent = content[lang].banner;
-      ["ru", "en", "ua"].forEach(l => {
-        document.getElementById("btn-" + l).classList.toggle("active", l === lang);
+      document.getElementById("team-title").textContent = content[lang].teamTitle;
+      document.getElementById("team-desc").textContent = content[lang].teamDesc;
+
+      [btnRu, btnEn, btnUa].forEach(btn => {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
+      });
+
+      if(lang === "ru") {
+        btnRu.classList.add("active");
+        btnRu.setAttribute("aria-pressed", "true");
+      } else if(lang === "en") {
+        btnEn.classList.add("active");
+        btnEn.setAttribute("aria-pressed", "true");
+      } else if(lang === "ua") {
+        btnUa.classList.add("active");
+        btnUa.setAttribute("aria-pressed", "true");
+      }
+    }
+
+    btnRu.addEventListener("click", () => setLang("ru"));
+    btnEn.addEventListener("click", () => setLang("en"));
+    btnUa.addEventListener("click", () => setLang("ua"));
+
+    // Изначально русский
+    setLang("ru");
+
+    // Анимация капель
+    const dropletsContainer = document.querySelector('.droplets');
+
+    function createDroplet() {
+      const droplet = document.createElement('div');
+      droplet.classList.add('droplet');
+      droplet.style.left = Math.random() * 100 + 'vw';
+      droplet.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      droplet.style.width = (Math.random() * 7 + 3) + 'px';
+      droplet.style.height = (Math.random() * 20 + 10) + 'px';
+      dropletsContainer.appendChild(droplet);
+
+      droplet.addEventListener('animationend', () => {
+        droplet.remove();
       });
     }
-  </script>
 
-  <script>
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    let W, H;
-    const drops = [];
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resize);
-    resize();
-
-    class Drop {
-      constructor() {
-        this.x = Math.random() * W;
-        this.y = Math.random() * H;
-        this.size = 5 + Math.random() * 12;
-        this.speed = 1 + Math.random() * 2;
-        this.angle = Math.random() * Math.PI * 2;
-      }
-      update() {
-        this.y += this.speed;
-        this.x += Math.sin(this.angle) * 0.5;
-        this.angle += 0.02;
-        if (this.y > H + this.size) {
-          this.y = -this.size;
-          this.x = Math.random() * W;
-        }
-      }
-      draw() {
-        ctx.fillStyle = "rgba(255, 50, 50, 0.7)";
-        ctx.beginPath();
-        ctx.ellipse(this.x, this.y, this.size / 2, this.size, 0, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < 40; i++) drops.push(new Drop());
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      drops.forEach(d => {
-        d.update();
-        d.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
+    setInterval(createDroplet, 300);
   </script>
 </body>
 </html>
