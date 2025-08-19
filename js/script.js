@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bot_label: "Бот"
   },
   en: {
-    title: "Luna",
+    title: "Nexora",
     description: "Just Nexora.<br> One of those who makes the move in GHS",
     ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
     telegram_label: "Telegram",
