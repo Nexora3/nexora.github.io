@@ -1,126 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nexora — GHS Team</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#0a0a0a,#2a2a2a);
-    color:#eee; min-height:100vh; display:flex;
-    justify-content:center; align-items:center;
-    overflow:hidden; position:relative;
-  }
-  .droplets {
-    position:fixed; top:0; left:0; width:100%; height:100%;
-    pointer-events:none; z-index:0; overflow:hidden;
-  }
-  .droplet {
-    position:absolute; bottom:100%;
-    width:6px; height:18px;
-    background:rgba(255,59,48,0.4);
-    border-radius:50%/60%;
-    animation:fall linear infinite;
-    filter:drop-shadow(0 0 4px #ff3b30);
-  }
-  @keyframes fall { to { transform:translateY(120vh); opacity:0; } }
-  .card {
-    background:#1c1c1cdd; padding:2.5rem 3rem; border-radius:20px;
-    box-shadow:0 0 20px #ff3b30cc; max-width:520px;
-    text-align:center; position:relative; z-index:10;
-    backdrop-filter:blur(6px);
-  }
-  header.banner {
-    margin-bottom:20px;
-  }
-  header.banner img {
-    width:100%; height:auto; border-radius:12px;
-    box-shadow:0 0 15px #ff3b30aa;
-  }
-  .avatar {
-    width:150px; height:150px; border-radius:50%;
-    border:5px solid #ff3b30; margin-bottom:1rem;
-    object-fit:cover; box-shadow:0 0 15px #ff3b30bb;
-    transition:transform .3s, box-shadow .3s;
-  }
-  .avatar:hover {
-    transform:scale(1.05); box-shadow:0 0 25px #ff3b30dd;
-  }
-  h1 { font-size:2.8rem; color:#ff3b30; text-shadow:0 0 10px #ff3b30bb; margin-bottom:0.3rem; }
-  h2 {
-    font-size:1.4rem; color:#ff6150; text-shadow:0 0 6px #ff6150bb;
-    margin:1.2rem 0 0.5rem;
-  }
-  p { font-size:1.15rem; line-height:1.45; margin-bottom:1.2rem; color:#ddd; }
-  .buttons {
-    display:flex; justify-content:center; gap:1rem; margin-top:1rem;
-  }
-  .buttons a {
-    padding:.7rem 1.6rem; background:#ff3b30; color:#fff;
-    border-radius:10px; text-decoration:none; font-weight:600;
-    transition:background-color .3s, box-shadow .3s;
-    box-shadow:0 0 10px #ff3b30aa;
-  }
-  .buttons a:hover {
-    background-color:#ff5a4a; box-shadow:0 0 20px #ff5a4a;
-  }
-  .lang-switcher {
-    margin-top:1.5rem; display:flex; justify-content:center; gap:1rem;
-  }
-  .lang-switcher button {
-    background:transparent; border:2px solid #ff3b30; color:#ff3b30;
-    padding:.4rem 1rem; border-radius:12px; font-weight:600;
-    cursor:pointer; transition:all .3s;
-  }
-  .lang-switcher button.active,
-  .lang-switcher button:hover {
-    background:#ff3b30; color:#fff;
-  }
-  .toggle {
-    cursor:pointer; font-size:2rem;
-    display:inline-block; margin:1rem 0;
-    transition:transform .3s;
-  }
-  .toggle.open { transform:rotate(180deg); }
-  #info { overflow:hidden; max-height:0; transition:max-height .4s ease; }
-  #toggle-info:checked ~ .toggle-content #info { max-height:300px; }
-  @media (max-width:600px){
-    .card{padding:2rem;}
-    .avatar{width:120px; height:120px;}
-    h1{font-size:2.2rem;} h2{font-size:1.2rem;}
-    .buttons a{padding:.6rem 1.2rem;font-size:.9rem;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora — GHS</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="droplets"></div>
+
+  <!-- Баннер на весь экран -->
+  <div class="banner">
+    <img src="assets/banner.jpg" alt="GHS Banner" />
+  </div>
+
+  <!-- Контейнер -->
   <div class="card">
-    <header class="banner">
-      <img src="https://i.imgur.com/eTP5zKJ.png" alt="Banner GHS">
-    </header>
-    <img src="https://i.imgur.com/U6ap87p.jpg" alt="Аватар Nexora" class="avatar">
+    <img src="assets/avatar.jpg" alt="Avatar" class="avatar" />
     <h1 id="name">Nexora</h1>
     <p id="description">Просто Nexora. Один из тех, кто делает движ GHS.</p>
+
     <h2 id="team-title">GHS Team</h2>
     <p id="team-desc">
       Это сообщество для общения, где вы можете найти новых друзей и единомышленников.
-      Мы объединяем людей, интересующихся программированием и видеоиграми,
-      создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.
+      Мы объединяем людей, интересующихся программированием и видеоиграми.
     </p>
 
-    <input type="checkbox" id="toggle-info" style="display:none">
-    <label for="toggle-info" class="toggle" aria-label="Показать/скрыть описание">&#9660;</label>
-    <div class="toggle-content" id="info">
-      <p>Дополнительная информация может быть здесь...</p>
+    <!-- Стрелка и скрытая инфа -->
+    <button class="toggle-button" onclick="toggleInfo()">▼</button>
+    <div id="extra-info" class="hidden">
+      <p>Дополнительная информация о GHS и Nexora...</p>
     </div>
 
-    <nav class="buttons">
+    <!-- Кнопки -->
+    <div class="buttons">
       <a href="https://discord.gg/ghsteam" target="_blank">Discord</a>
-      <a href="https://ghs-team.vercel.app/" target="_blank">GHS</a>
-    </nav>
+      <a href="https://ghs-team.vercel.app/" target="_blank">GHS сайт</a>
+    </div>
 
+    <!-- Языки -->
     <div class="lang-switcher">
       <button id="btn-ru" class="active">RU</button>
       <button id="btn-en">EN</button>
@@ -131,49 +48,43 @@
   <script>
     const content = {
       ru: {
-        name:"Nexora",
-        description:"Просто Nexora. Один из тех, кто делает движ GHS.",
-        teamTitle:"GHS Team",
-        teamDesc:"Это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения."
+        name: "Nexora",
+        description: "Просто Nexora. Один из тех, кто делает движ GHS.",
+        teamTitle: "GHS Team",
+        teamDesc: "Это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми."
       },
       en: {
-        name:"Nexora",
-        description:"Just Nexora. One of those who make the GHS movement.",
-        teamTitle:"GHS Team",
-        teamDesc:"This is a community for communication where you can find new friends and like-minded people. We unite people interested in programming and video games, creating a comfortable atmosphere for exchanging experience, ideas, and just pleasant communication."
+        name: "Nexora",
+        description: "Just Nexora. One of those who drives the GHS vibe.",
+        teamTitle: "GHS Team",
+        teamDesc: "A community for communication where you can find new friends and like-minded people. We unite those interested in programming and games."
       },
       ua: {
-        name:"Nexora",
-        description:"Просто Nexora. Один із тих, хто робить рух GHS.",
-        teamTitle:"GHS Team",
-        teamDesc:"Це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об’єднуємо людей, які цікавляться програмуванням та відеоіграми, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування."
+        name: "Nexora",
+        description: "Просто Nexora. Один із тих, хто робить рух GHS.",
+        teamTitle: "GHS Team",
+        teamDesc: "Це спільнота для спілкування, де ви знайдете друзів та однодумців. Ми об’єднуємо тих, хто цікавиться програмуванням та іграми."
       }
     };
-    ["ru","en","ua"].forEach(lang => {
-      document.getElementById("btn-"+lang).addEventListener("click", () => {
-        ["ru","en","ua"].forEach(l => {
-          document.getElementById("btn-"+l).classList.toggle("active", l===lang);
+
+    ["ru", "en", "ua"].forEach(lang => {
+      document.getElementById("btn-" + lang).addEventListener("click", () => {
+        ["ru", "en", "ua"].forEach(l => {
+          document.getElementById("btn-" + l).classList.remove("active");
         });
+        document.getElementById("btn-" + lang).classList.add("active");
+
         document.getElementById("name").textContent = content[lang].name;
         document.getElementById("description").textContent = content[lang].description;
         document.getElementById("team-title").textContent = content[lang].teamTitle;
         document.getElementById("team-desc").textContent = content[lang].teamDesc;
       });
     });
-    document.querySelector('.toggle').addEventListener('click', function(){
-      this.classList.toggle('open');
-    });
-    setInterval(() => {
-      const container = document.querySelector('.droplets');
-      const d = document.createElement('div');
-      d.className = 'droplet';
-      d.style.left = Math.random()*100+'vw';
-      d.style.animationDuration = (2+Math.random()*3)+'s';
-      d.style.width = (3+Math.random()*7)+'px';
-      d.style.height = (10+Math.random()*20)+'px';
-      container.appendChild(d);
-      d.addEventListener('animationend', ()=>d.remove());
-    }, 250);
+
+    function toggleInfo() {
+      const info = document.getElementById("extra-info");
+      info.classList.toggle("hidden");
+    }
   </script>
 </body>
 </html>
