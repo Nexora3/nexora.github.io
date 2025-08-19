@@ -1,90 +1,155 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexora — GHS</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nexora - Bio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0; 
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .container {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 380px;
+    width: 90vw;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #5d86f2;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+  }
+
+  .avatar:hover {
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin: 0 0 8px 0;
+    color: #5d86f2;
+    letter-spacing: 1px;
+  }
+
+  p.description {
+    font-size: 1.1rem;
+    margin: 0 0 25px 0;
+    color: #bbb;
+    line-height: 1.4;
+  }
+
+  .team-info {
+    background: #222;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 8px #5d86f2;
+    user-select: none;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .links a {
+    text-decoration: none;
+    background: #5d86f2;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px #5d86f2aa;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .links a:hover {
+    background: #4170d9;
+    transform: translateY(-3px);
+  }
+
+  /* Animate background bubbles */
+  .bubbles {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(93, 134, 242, 0.15);
+    animation: rise 15s linear infinite;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 2px #5d86f2);
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(120vh) scale(0.5);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-20vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <!-- Баннер на весь экран -->
-  <div class="banner">
-    <img src="assets/banner.jpg" alt="GHS Banner" />
+<div class="container">
+  <img src="https://i.imgur.com/0m6IRxP.png" alt="Nexora Avatar" class="avatar" />
+  <h1>Nexora</h1>
+  <p class="description">Просто Nexora. Один из тех, кто делает движ GHS.</p>
+  <div class="team-info">
+    GHS Team — это сообщество для общения, где вы можете найти новых друзей и единомышленников.<br />
+    Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.
   </div>
-
-  <!-- Контейнер -->
-  <div class="card">
-    <img src="assets/avatar.jpg" alt="Avatar" class="avatar" />
-    <h1 id="name">Nexora</h1>
-    <p id="description">Просто Nexora. Один из тех, кто делает движ GHS.</p>
-
-    <h2 id="team-title">GHS Team</h2>
-    <p id="team-desc">
-      Это сообщество для общения, где вы можете найти новых друзей и единомышленников.
-      Мы объединяем людей, интересующихся программированием и видеоиграми.
-    </p>
-
-    <!-- Стрелка и скрытая инфа -->
-    <button class="toggle-button" onclick="toggleInfo()">▼</button>
-    <div id="extra-info" class="hidden">
-      <p>Дополнительная информация о GHS и Nexora...</p>
-    </div>
-
-    <!-- Кнопки -->
-    <div class="buttons">
-      <a href="https://discord.gg/ghsteam" target="_blank">Discord</a>
-      <a href="https://ghs-team.vercel.app/" target="_blank">GHS сайт</a>
-    </div>
-
-    <!-- Языки -->
-    <div class="lang-switcher">
-      <button id="btn-ru" class="active">RU</button>
-      <button id="btn-en">EN</button>
-      <button id="btn-ua">UA</button>
-    </div>
+  <div class="links">
+    <a href="https://discord.gg/ghsteam" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://vk.com/yourvk" target="_blank" rel="noopener noreferrer">VK</a>
   </div>
+</div>
 
-  <script>
-    const content = {
-      ru: {
-        name: "Nexora",
-        description: "Просто Nexora. Один из тех, кто делает движ GHS.",
-        teamTitle: "GHS Team",
-        teamDesc: "Это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми."
-      },
-      en: {
-        name: "Nexora",
-        description: "Just Nexora. One of those who drives the GHS vibe.",
-        teamTitle: "GHS Team",
-        teamDesc: "A community for communication where you can find new friends and like-minded people. We unite those interested in programming and games."
-      },
-      ua: {
-        name: "Nexora",
-        description: "Просто Nexora. Один із тих, хто робить рух GHS.",
-        teamTitle: "GHS Team",
-        teamDesc: "Це спільнота для спілкування, де ви знайдете друзів та однодумців. Ми об’єднуємо тих, хто цікавиться програмуванням та іграми."
-      }
-    };
+<div class="bubbles">
+  <div class="bubble" style="width: 30px; height: 30px; left: 10%; animation-delay: 0s;"></div>
+  <div class="bubble" style="width: 20px; height: 20px; left: 25%; animation-delay: 3s;"></div>
+  <div class="bubble" style="width: 50px; height: 50px; left: 40%; animation-delay: 6s;"></div>
+  <div class="bubble" style="width: 15px; height: 15px; left: 60%; animation-delay: 9s;"></div>
+  <div class="bubble" style="width: 35px; height: 35px; left: 80%; animation-delay: 12s;"></div>
+</div>
 
-    ["ru", "en", "ua"].forEach(lang => {
-      document.getElementById("btn-" + lang).addEventListener("click", () => {
-        ["ru", "en", "ua"].forEach(l => {
-          document.getElementById("btn-" + l).classList.remove("active");
-        });
-        document.getElementById("btn-" + lang).classList.add("active");
-
-        document.getElementById("name").textContent = content[lang].name;
-        document.getElementById("description").textContent = content[lang].description;
-        document.getElementById("team-title").textContent = content[lang].teamTitle;
-        document.getElementById("team-desc").textContent = content[lang].teamDesc;
-      });
-    });
-
-    function toggleInfo() {
-      const info = document.getElementById("extra-info");
-      info.classList.toggle("hidden");
-    }
-  </script>
 </body>
 </html>
