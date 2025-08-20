@@ -1,30 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
   const translations = {
-  ru: {
-    title: "Nexora",
-    description: "Просто Nexora.<br> Однин из тех, кто делает движ в GHS",
-    ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Бот"
-  },
-  en: {
-    title: "Nexora",
-    description: "Just Nexora.<br> One of those who makes the move in GHS",
-    ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bot"
-  },
-  es: {
-    title: "Nexora",
-    description: "Solo Nexora.<br> Uno de los que hace el movimiento en GHS",
-    ad_block: "Equipo GHS<br> es una comunidad para la comunicación donde puedes encontrar nuevos amigos y personas con intereses similares. Reunimos a personas interesadas en la programación y los videojuegos, creando un ambiente cómodo para compartir experiencias, ideas y simplemente charlar amigablemente.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bot"
-  }
-};
+    sv: {
+      title: "Nexora",
+      description: "Bara Nexora.<br> En av dem som driver på i GHS",
+      ad_block: "GHS Team<br> är en gemenskap för kommunikation där du kan hitta nya vänner och likasinnade. Vi samlar personer som är intresserade av programmering och videospel och skapar en bekväm miljö för att dela erfarenheter, idéer och bara ha trevligt.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    },
+    uk: {
+      title: "Nexora",
+      description: "Просто Nexora.<br> Один з тих, хто створює рух у GHS",
+      ad_block: "GHS Team<br> — це спільнота для спілкування, де ви можете знайти нових друзів і однодумців. Ми об'єднуємо людей, які цікавляться програмуванням і відеоіграми, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Бот"
+    },
+    ru: {
+      title: "Nexora",
+      description: "Просто Nexora.<br> Однин из тех, кто делает движ в GHS",
+      ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Бот"
+    },
+    en: {
+      title: "Nexora",
+      description: "Just Nexora.<br> One of those who makes the move in GHS",
+      ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    },
+    es: {
+      title: "Nexora",
+      description: "Solo Nexora.<br> Uno de los que hace el movimiento en GHS",
+      ad_block: "Equipo GHS<br> es una comunidad para la comunicación donde puedes encontrar nuevos amigos y personas con intereses similares. Reunimos a personas interesadas en la programación y los videojuegos, creando un ambiente cómodo para compartir experiencias, ideas y simplemente charlar amigablemente.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    }
+  };
 
   function setLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -45,7 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.language-current').textContent = {
       ru: '🇷🇺',
       en: '🇬🇧',
-      es: '🇪🇸'
+      es: '🇪🇸',
+      sv: '🇸🇪',
+      uk: '🇺🇦'
     }[lang];
   }
 
