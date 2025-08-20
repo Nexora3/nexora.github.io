@@ -1,9 +1,9 @@
 :root {
---primary-color: #8e44ad;       /* глубокий фиолетовый */
---secondary-color: #e91e63;     /* яркий розово-малиновый */
---bg-color: rgba(52, 20, 70, 0.5); /* фиолетовый полупрозрачный фон */
---text-color: #ffffff;          /* белый текст */
---accent-color: #c2185b;        /* тёмно-розовый */
+  --primary-color: #4FC3F7;
+  --secondary-color: #0288D1;
+  --bg-color: #1E3A5F;
+  --card-color: rgba(42, 75, 124, 0.5);
+  --text-color: #B3E5FC;
   --animation-speed: 0.4s;
 }
 
