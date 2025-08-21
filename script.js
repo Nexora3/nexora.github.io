@@ -1,61 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
   const translations = {
-ru: {
-    title: "Nexora",
-    description: "Просто Nexora.<br> Один из тех, кто делает движ в GHS",
-    ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Бот"
-},
-en: {
-    title: "Nexora",
-    description: "Just Nexora.<br> One of those who makes the move in GHS",
-    ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bot"
-},
-es: {
-    title: "Nexora",
-    description: "Solo Nexora.<br> Uno de los que hace el movimiento en GHS",
-    ad_block: "Equipo GHS<br> es una comunidad para la comunicación donde puedes encontrar nuevos amigos y personas con intereses similares. Reunimos a personas interesadas en la programación y los videojuegos, creando un ambiente cómodo para compartir experiencias, ideas y simplemente charlar amigablemente.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bot"
-},
-sv: {
-    title: "Nexora",
-    description: "Bara Nexora.<br> En av dem som driver rörelsen i GHS",
-    ad_block: "GHS Team<br> är ett community för kommunikation där du kan hitta nya vänner och likasinnade. Vi samlar personer intresserade av programmering och videospel, och skapar en bekväm miljö för att dela erfarenheter, idéer och bara trevlig pratstund.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bot"
-},
-uk: {
-    title: "Nexora",
-    description: "Просто Nexora.<br> Один із тих, хто робить рух у GHS",
-    ad_block: "GHS Team<br> це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об’єднуємо людей, зацікавлених у програмуванні та відеоіграх, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Бот"
-},
-lv: {
-    title: "Nexora",
-    description: "Tikai Nexora.<br> Viens no tiem, kas veicina GHS darbību",
-    ad_block: "GHS Team<br> ir kopiena komunikācijai, kurā varat atrast jaunus draugus un domubiedrus. Mēs apvienojam cilvēkus, kuri interesējas par programmēšanu un videospēlēm, radot ērtu vidi pieredzes, ideju un vienkārši draudzīgu sarunu apmaiņai.",
-    telegram_label: "Telegram",
-    discord_label: "Discord",
-    bot_label: "Bots"
-  }
-};
+    ru: {
+      title: "Nexora",
+      description: "Просто Nexora.<br> Один из тех, кто делает движ в GHS",
+      ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Бот"
+    },
+    en: {
+      title: "Nexora",
+      description: "Just Nexora.<br> One of those who makes the move in GHS",
+      ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    },
+    es: {
+      title: "Nexora",
+      description: "Solo Nexora.<br> Uno de los que hace el movimiento en GHS",
+      ad_block: "Equipo GHS<br> es una comunidad para la comunicación donde puedes encontrar nuevos amigos y personas con intereses similares. Reunimos a personas interesadas en la programación y los videojuegos, creando un ambiente cómodo para compartir experiencias, ideas y simplemente charlar amigablemente.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    },
+    sv: {
+      title: "Nexora",
+      description: "Bara Nexora.<br> En av dem som driver rörelsen i GHS",
+      ad_block: "GHS Team<br> är ett community för kommunikation där du kan hitta nya vänner och likasinnade. Vi samlar personer intresserade av programmering och videospel, och skapar en bekväm miljö för att dela erfarenheter, idéer och bara trevlig pratstund.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bot"
+    },
+    uk: {
+      title: "Nexora",
+      description: "Просто Nexora.<br> Один із тих, хто робить рух у GHS",
+      ad_block: "GHS Team<br> це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об’єднуємо людей, зацікавлених у програмуванні та відеоіграх, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Бот"
+    },
+    lv: {
+      title: "Nexora",
+      description: "Tikai Nexora.<br> Viens no tiem, kas veicina GHS darbību",
+      ad_block: "GHS Team<br> ir kopiena komunikācijai, kurā varat atrast jaunus draugus un domubiedrus. Mēs apvienojam cilvēkus, kuri interesējas par programmēšanu un videospēlēm, radot ērtu vidi pieredzes, ideju un vienkārši draudzīgu sarunu apmaiņai.",
+      telegram_label: "Telegram",
+      discord_label: "Discord",
+      bot_label: "Bots"
+    }
+  };
 
   function setLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
-      let text = key.split('.').reduce((obj, k) => obj && obj[k], translations[lang]);
+      // безопасный reduce
+      let text = key.split('.').reduce((obj, k) => (obj && obj[k] !== undefined) ? obj[k] : '', translations[lang]);
       if (text) {
-        if (element.tagName === 'TITLE' || element.tagName === 'P' || element.tagName === 'H1') {
+        if (element.tagName === 'TITLE' || element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'DIV') {
           element.innerHTML = text;
         } else {
           element.textContent = text;
@@ -65,24 +66,26 @@ lv: {
         }
       }
     });
-  document.documentElement.lang = lang;
-document.querySelector('.language-current').textContent = {
-  ru: '🇷🇺',
-  en: '🇬🇧',
-  es: '🇪🇸',
-  sv: '🇸🇪',
-  uk: '🇺🇦',
-  lv: '🇱🇻'
-}[lang];
+
+    document.documentElement.lang = lang;
+    document.querySelector('.language-current').textContent = {
+      ru: '🇷🇺',
+      en: '🇬🇧',
+      es: '🇪🇸',
+      sv: '🇸🇪',
+      uk: '🇺🇦',
+      lv: '🇱🇻'
+    }[lang];
+  }
 
   const heartsContainer = document.getElementById('hearts-container');
   const colors = ['#4FC3F7', '#0288D1', '#81D4FA', '#B3E5FC'];
-  
+
   function createHeart(x, y, isClick = false) {
     const heart = document.createElement('div');
     heart.className = 'heart';
     heart.innerHTML = '💧';
-    
+
     if (isClick) {
       heart.style.left = `${x + (Math.random() - 0.5) * 20}px`;
       heart.style.top = `${y + (Math.random() - 0.5) * 20}px`;
@@ -96,16 +99,14 @@ document.querySelector('.language-current').textContent = {
       heart.style.animationDuration = `${10 + Math.random() * 15}s`;
       heart.style.opacity = `${0.3 + Math.random() * 0.7}`;
     }
-    
+
     heart.style.color = colors[Math.floor(Math.random() * colors.length)];
     heart.style.animationName = `float${Math.floor(Math.random() * 3) + 1}`;
-    
+
     heartsContainer.appendChild(heart);
-    
+
     setTimeout(() => {
-      if (heart.parentNode) {
-        heart.parentNode.removeChild(heart);
-      }
+      if (heart.parentNode) heart.parentNode.removeChild(heart);
     }, parseFloat(heart.style.animationDuration) * 1000);
   }
 
@@ -116,7 +117,7 @@ document.querySelector('.language-current').textContent = {
   });
 
   function generateBackgroundHearts() {
-    const count = 5 + Math.floor(Math.random() * 3); // 5–7 капель
+    const count = 5 + Math.floor(Math.random() * 3);
     for (let i = 0; i < count; i++) {
       setTimeout(() => createHeart(), i * 200);
     }
@@ -126,9 +127,9 @@ document.querySelector('.language-current').textContent = {
   for (let i = 0; i < 20; i++) {
     setTimeout(() => createHeart(), i * 150);
   }
-  
+
   generateBackgroundHearts();
-  
+
   const buttons = document.querySelectorAll('.btn');
   buttons.forEach(btn => {
     btn.addEventListener('click', function(e) {
@@ -162,13 +163,13 @@ document.querySelector('.language-current').textContent = {
     });
   });
 
-  // Закрытие меню при клике вне его
+  // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!languageSwitcher.contains(e.target)) {
       languageMenu.classList.remove('show');
     }
   });
 
-  // Инициализация языка по умолчанию
+  // Default language
   setLanguage('ru');
 });
