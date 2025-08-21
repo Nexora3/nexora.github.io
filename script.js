@@ -1,28 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
   const translations = {
-  ru: {
+ru: {
     title: "Nexora",
-    description: "Просто Nexora.<br> Однин из тех, кто делает движ в GHS",
+    description: "Просто Nexora.<br> Один из тех, кто делает движ в GHS",
     ad_block: "GHS Team<br> это сообщество для общения, где вы можете найти новых друзей и единомышленников. Мы объединяем людей, интересующихся программированием и видеоиграми, создавая комфортную атмосферу для обмена опытом, идей и просто приятного общения.",
     telegram_label: "Telegram",
     discord_label: "Discord",
     bot_label: "Бот"
-  },
-  en: {
+},
+en: {
     title: "Nexora",
     description: "Just Nexora.<br> One of those who makes the move in GHS",
     ad_block: "GHS Team<br> is a community for communication where you can find new friends and like-minded people. We bring together individuals interested in programming and video games, creating a comfortable atmosphere for sharing experiences, ideas, and just friendly chats.",
     telegram_label: "Telegram",
     discord_label: "Discord",
     bot_label: "Bot"
-  },
-  es: {
+},
+es: {
     title: "Nexora",
     description: "Solo Nexora.<br> Uno de los que hace el movimiento en GHS",
     ad_block: "Equipo GHS<br> es una comunidad para la comunicación donde puedes encontrar nuevos amigos y personas con intereses similares. Reunimos a personas interesadas en la programación y los videojuegos, creando un ambiente cómodo para compartir experiencias, ideas y simplemente charlar amigablemente.",
     telegram_label: "Telegram",
     discord_label: "Discord",
     bot_label: "Bot"
+},
+sv: {
+    title: "Nexora",
+    description: "Bara Nexora.<br> En av dem som driver rörelsen i GHS",
+    ad_block: "GHS Team<br> är ett community för kommunikation där du kan hitta nya vänner och likasinnade. Vi samlar personer intresserade av programmering och videospel, och skapar en bekväm miljö för att dela erfarenheter, idéer och bara trevlig pratstund.",
+    telegram_label: "Telegram",
+    discord_label: "Discord",
+    bot_label: "Bot"
+},
+uk: {
+    title: "Nexora",
+    description: "Просто Nexora.<br> Один із тих, хто робить рух у GHS",
+    ad_block: "GHS Team<br> це спільнота для спілкування, де ви можете знайти нових друзів та однодумців. Ми об’єднуємо людей, зацікавлених у програмуванні та відеоіграх, створюючи комфортну атмосферу для обміну досвідом, ідеями та просто приємного спілкування.",
+    telegram_label: "Telegram",
+    discord_label: "Discord",
+    bot_label: "Бот"
+},
+lv: {
+    title: "Nexora",
+    description: "Tikai Nexora.<br> Viens no tiem, kas veicina GHS darbību",
+    ad_block: "GHS Team<br> ir kopiena komunikācijai, kurā varat atrast jaunus draugus un domubiedrus. Mēs apvienojam cilvēkus, kuri interesējas par programmēšanu un videospēlēm, radot ērtu vidi pieredzes, ideju un vienkārši draudzīgu sarunu apmaiņai.",
+    telegram_label: "Telegram",
+    discord_label: "Discord",
+    bot_label: "Bots"
   }
 };
 
@@ -41,13 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
-    document.documentElement.lang = lang;
-    document.querySelector('.language-current').textContent = {
-      ru: '🇷🇺',
-      en: '🇬🇧',
-      es: '🇪🇸'
-    }[lang];
-  }
+  document.documentElement.lang = lang;
+document.querySelector('.language-current').textContent = {
+  ru: '🇷🇺',
+  en: '🇬🇧',
+  es: '🇪🇸',
+  sv: '🇸🇪',
+  uk: '🇺🇦',
+  lv: '🇱🇻'
+}[lang];
 
   const heartsContainer = document.getElementById('hearts-container');
   const colors = ['#4FC3F7', '#0288D1', '#81D4FA', '#B3E5FC'];
