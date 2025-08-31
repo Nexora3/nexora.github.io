@@ -1,11 +1,14 @@
 :root {
-  --primary-color: #4FC3F7;
-  --secondary-color: #0288D1;
-  --bg-color: #1E3A5F;
-  --card-color: rgba(42, 75, 124, 0.5);
-  --text-color: #B3E5FC;
-  --animation-speed: 0.4s;
+  --bg-color: #001109;
+  --card-bg: rgba(20, 40, 25, 0.7);
+  --accent: #00ff95;   /* кислотно-зелёный */
+  --accent2: #ccff00;  /* лаймовый */
+  --text: #eafff1;
+  --blur: 20px;
+  --radius: 18px;
+  --speed: 0.35s;
 }
+
 
 * {
   box-sizing: border-box;
