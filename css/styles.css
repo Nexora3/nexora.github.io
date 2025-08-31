@@ -1,9 +1,9 @@
 :root {
-  --bg-color: #0a0a1a;
-  --card-bg: rgba(20, 25, 45, 0.7);
-  --accent: #00f5ff;
-  --accent2: #ff4dff;
-  --text: #f1faff;
+  --bg-color: #001109;
+  --card-bg: rgba(20, 40, 25, 0.7);
+  --accent: #00ff95;   /* кислотно-зелёный */
+  --accent2: #ccff00;  /* лаймовый */
+  --text: #eafff1;
   --blur: 20px;
   --radius: 18px;
   --speed: 0.35s;
